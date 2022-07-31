@@ -36,7 +36,16 @@ public class Skyscraper {
 	        return list;
 	    }
 	   
+	    public void insertAfter(Node prev_node, int new_data)
+	    {
 
+	        Node new_node = new Node(new_data);
+	      
+	        new_node.next = prev_node.next;
+	      
+	        prev_node.next = new_node;
+	    }
+	    
 //	    public static void printList(Skyscraper list)
 //	    {
 //	        Node currNode = list.head;
@@ -71,16 +80,21 @@ public class Skyscraper {
 		        System.out.println("The order of construction is as follows");
 		        
 		        Node current = list.head;
+		        Skyscraper new_list = new Skyscraper();
+//		        new_list.head;
 
 		        int Bottom_floor = no_of_floors;
-		        int Top_floor = 1;
+		        int Top_floor = 1, last_floor = 5;
 		        int Curr_floor = Bottom_floor;
 
 		        for(int i=1; i<=no_of_floors; i++){
 		        if(current.data == Curr_floor){
-		            System.out.println("Day:" + i);
-		            System.out.println(current.data);
+		            new_list = insert(new_list, current.data);
+		            if(Curr_floor < last_floor) {
+		            	
+		            }
 		            Curr_floor = current.data;
+		            last_floor = current.data;
 		            current = current.next;
 		        }else{
 		            System.out.println("Day:" +i);
