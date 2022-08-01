@@ -47,28 +47,6 @@ public class Linkedlist {
         }
         return list;
     }
-   
-//    public void insertAfter(Node prev_node, int new_data)
-//    {
-//
-//        Node new_node = new Node(new_data);
-//      
-//        new_node.next = prev_node.next;
-//      
-//        prev_node.next = new_node;
-//    }
-    
-    public static void printList(Linkedlist list)
-    {
-        Node currNode = list.head;
-    
-        while (currNode != null) {
-
-            System.out.print(currNode.data + " ");
-    
-            currNode = currNode.next;
-        }
-    }
     
     void deleteList()
     {
