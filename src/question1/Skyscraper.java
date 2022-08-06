@@ -15,7 +15,7 @@ public class Skyscraper {
 				System.out.println("enter the total no of floors in the building");
 		        
 				int no_of_floors = sc.nextInt();
-		        int Bottom_floor = no_of_floors, j=1;
+		        int Bottom_floor = no_of_floors;
 		        boolean flag;
 		        
 		        for(int i=0; i<no_of_floors; i++) {
@@ -25,21 +25,24 @@ public class Skyscraper {
 		        
 		        System.out.println("The order of construction is as follows ");
 		        
-//		        list.head = list.reverse(list.head);
+		        list.head = list.reverse(list.head);
 		        Node current = list.head;
 		        
-		        for(int i=no_of_floors;i>=1;i--){
+		        for(int i=1;i<=no_of_floors;i++){
 		            flag=false;
-		            System.out.println("Day "+j+" :");
-		            j++;
-		            while(Bottom_floor>=1 && current.data>=i){
+		            System.out.println("Day "+i+" :");
+//		            j++;
+		            while(Bottom_floor>=1 && current.data<=i){
 		                flag=true;
 		                System.out.print(Bottom_floor +" ");
 		                Bottom_floor--;
 		                current = current.next;
 		            }
-		            if(flag==true){
+		            if(flag==false){
 		                System.out.println();
+//		                if((current.next) != null) {
+//		                current = current.next;
+//		                }
 		            }
 		        }
 			}
